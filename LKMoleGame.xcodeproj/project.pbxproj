@@ -15,6 +15,7 @@
 		773566891D051F9A000939F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 773566871D051F9A000939F4 /* Main.storyboard */; };
 		7735668B1D051F9A000939F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7735668A1D051F9A000939F4 /* Assets.xcassets */; };
 		7735668E1D051F9A000939F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7735668C1D051F9A000939F4 /* LaunchScreen.storyboard */; };
+		773566981D0520F6000939F4 /* LKMoleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 773566971D0520F6000939F4 /* LKMoleNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		7735668A1D051F9A000939F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7735668D1D051F9A000939F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7735668F1D051F9A000939F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		773566961D0520F6000939F4 /* LKMoleNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LKMoleNode.h; path = LKNode/LKMoleNode.h; sourceTree = "<group>"; };
+		773566971D0520F6000939F4 /* LKMoleNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LKMoleNode.m; path = LKNode/LKMoleNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		773566781D051F99000939F4 /* LKMoleGame */ = {
 			isa = PBXGroup;
 			children = (
+				773566951D0520D8000939F4 /* LKNode */,
 				7735667C1D051F99000939F4 /* AppDelegate.h */,
 				7735667D1D051F99000939F4 /* AppDelegate.m */,
 				7735667F1D051F99000939F4 /* GameScene.h */,
@@ -85,6 +89,15 @@
 				7735667A1D051F99000939F4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		773566951D0520D8000939F4 /* LKNode */ = {
+			isa = PBXGroup;
+			children = (
+				773566961D0520F6000939F4 /* LKMoleNode.h */,
+				773566971D0520F6000939F4 /* LKMoleNode.m */,
+			);
+			name = LKNode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +175,7 @@
 				7735667E1D051F99000939F4 /* AppDelegate.m in Sources */,
 				773566811D051F99000939F4 /* GameScene.m in Sources */,
 				7735667B1D051F99000939F4 /* main.m in Sources */,
+				773566981D0520F6000939F4 /* LKMoleNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

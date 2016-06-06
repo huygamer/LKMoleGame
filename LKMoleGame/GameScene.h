@@ -7,7 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "LKMoleNode.h"
 
 @interface GameScene : SKScene
-
+{
+    LKMoleNode * lkMole;
+}
 @end

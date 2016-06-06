@@ -10,19 +10,38 @@
 
 @implementation GameScene
 
--(void)didMoveToView:(SKView *)view {
-    /* Setup your scene here */
-    SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+- (void)didMoveToView:(SKView *)view {
+    SKSpriteNode * lkBackground = [SKSpriteNode spriteNodeWithImageNamed:@"Background"];
+    lkBackground.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+    lkBackground.zPosition = -10;
+    [self addChild:lkBackground];
     
-    myLabel.text = @"Hello, World!";
-    myLabel.fontSize = 45;
-    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                   CGRectGetMidY(self.frame));
     
-    [self addChild:myLabel];
+    lkMole = [LKMoleNode node];
+    [lkMole lkCreatMole];
+    [lkMole lkSettingNewPlace:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+    [self addChild:lkMole];
+    
+    SKAction * lkRunBlock = [SKAction runBlock:^{
+        [self lkGo];
+    }];
+    
+    SKAction * lkActionNow = [SKAction sequence:@[[SKAction waitForDuration:3.0], lkRunBlock]];
+    [self runAction:lkActionNow withKey:@"Repeated"];
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)lkGo{
+    [lkMole lkGoUp];
+    
+    SKAction * lkRunBlock = [SKAction runBlock:^{
+        [self lkGo];
+    }];
+    
+    SKAction * lkActionNow = [SKAction sequence:@[[SKAction waitForDuration:3.0], lkRunBlock]];
+    [self runAction:lkActionNow withKey:@"Repeated"];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
     for (UITouch *touch in touches) {
@@ -42,7 +61,7 @@
     }
 }
 
--(void)update:(CFTimeInterval)currentTime {
+- (void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }
 
