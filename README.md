@@ -1,4 +1,4 @@
-# LKMoleGame
+# LapKan Mole Game
 Mole Game By Sprite Kit
 
 This is the classic game from the beginning of IT century.
